@@ -12,6 +12,7 @@ app.use(cors());
 
 
 
+
 // Set up CORS headers
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 
 // Set up middleware for parsing JSON
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data
 
 // Define routes
 app.use("/api", require("./routes/Contact"));
@@ -32,6 +34,11 @@ app.use("/api", require("./routes/Product"));
 app.use("/api", require("./routes/Productget"));
 app.use("/api", require("./routes/QuantityPost"));
 app.use("/api", require("./routes/productdetails"));
+app.use("/api", require("./routes/messagedelete"));
+app.use("/api", require("./routes/signup"));
+app.use("/api", require("./routes/loginroutes"));
+// 
+
 
 const port = process.env.PORT || 8080; // Setting default port to 8080 if PORT is not provided in .env
 

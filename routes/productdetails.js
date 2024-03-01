@@ -1,13 +1,19 @@
 const express = require("express");
 const router = express.Router();
+const fetchDatas =require ("express-param")
+
+const app = express();
+app.use(fetchDatas());
 
 const Product = require("../models/productupload"); // Adjust the import path if necessary
 
-// Set up multer for file uploads
-router.get("/products/_id", async (req, res) => {
-  // Corrected route parameter
+
+router.get("/products/:id", async (req, res) => {
   try {
-    const product = await Product.findById(req.params._id); // Corrected parameter name
+    //console.log("Product ID:", req.params.id); // Corrected parameter name
+    // const id = req.params._id;
+    const product = await Product.findById(req.params.id).exec() // Corrected parameter name
+   // Corrected parameter name
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
     } else {

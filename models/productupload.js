@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 // Define the schema for the Product model
 const productSchema = new mongoose.Schema({
+
   name: {
     type: String,
     required: true,
@@ -19,7 +20,7 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
   image: {
-    type: Buffer,
+    type: String,
     required: true,
   },
 });
