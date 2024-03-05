@@ -37,6 +37,11 @@ app.use("/api", require("./routes/productdetails"));
 app.use("/api", require("./routes/messagedelete"));
 app.use("/api", require("./routes/signup"));
 app.use("/api", require("./routes/loginroutes"));
+app.use("/api", require("./routes/getOrder"));
+app.use("/api", require("./routes/ordercount"));
+app.use("/api", require("./routes/count"));
+app.use("/api", require("./routes/Messagecount"));
+app.use("/api", require("./routes/countProduct"));
 // 
 
 

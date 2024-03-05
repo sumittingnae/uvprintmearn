@@ -8,10 +8,7 @@ const jwtSceret = "$sumittingne29041996good";
 
 
 
-router.post(
-  "/loginUser",
-
-  async (req, res) => {
+router.post("/loginUser",async (req, res) => {
     let username = req.body.username;
 
     try {
